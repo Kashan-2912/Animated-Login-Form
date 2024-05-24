@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   background-color: #121212; 
+   background-image: url('./assets/bg.jpg'); 
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+
+section {
+   position: relative;
+   max-width: 400px;
+   background-color: rgba(0, 0, 0, 0.5); 
+   border: 2px solid rgba(255, 255, 255, 0.5);
+   border-radius: 20px;
+   backdrop-filter: blur(10px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem 3rem;
+}
+
+h1 {
+   font-size: 2rem;
+   color: #fff;
+   text-align: center;
+}
+
+.inputbox {
+   position: relative;
+   margin: 30px 0;
+   max-width: 310px;
+   border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+   position: absolute;
+   top: 50%;
+   left: 5px;
+   transform: translateY(-50%);
+   color: #fff;
+   font-size: 1rem;
+   pointer-events: none;
+   transition: all 0.5s ease-in-out;
+}
+
+.inputbox input {
+   width: 100%;
+   height: 60px;
+   background: transparent;
+   border: none;
+   outline: none;
+   font-size: 1rem;
+   padding: 0 35px 0 5px;
+   color: #fff;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:not(:placeholder-shown) ~ label {
+   top: -5px;
+}
+
+.inputbox ion-icon {
+   position: absolute;
+   right: 8px;
+   color: #fff;
+   font-size: 1.2rem;
+   top: 20px;
+}
+
+.forget {
+   padding-bottom: 1rem;
+}
+
+.forget label input {
+   margin-right: 0.3rem;
+   margin-bottom: 0.2rem;
+}
+
+.forget label {
+   font-size: 0.85rem;
+   color: #fff;
+}
+
+.forget a {
+   color: #fff;
+   text-decoration: none;
+   font-weight: 600;
+   margin-bottom: 1rem;
+   text-align: center;
+}
+
+.forget a:hover {
+   text-decoration: underline;
+}
+
+button {
+   width: 100%;
+   outline: none;
+   cursor: pointer;
+   border: none;
+   padding: 0.9rem 2rem;
+   margin: 0;
+   font-family: inherit;
+   font-size: inherit;
+   position: relative;
+   display: inline-block;
+   letter-spacing: 0.05rem;
+   font-weight: 700;
+   font-size: 17px;
+   border-radius: 500px;
+   overflow: hidden;
+   background: #f56c34;
+   color: #121212;
+   transition: background 0.3s ease;
+}
+
+.btn {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1rem;
+   overflow: hidden;
+   height: 3rem;
+   background-size: 300% 300%;
+   backdrop-filter: blur(1rem);
+   border-radius: 5rem;
+   transition: 0.5s;
+   animation: gradient_301 5s ease infinite;
+   border: double 10px transparent;
+   background-image: linear-gradient(#212121, #212121),
+      linear-gradient(
+         137.48deg,
+         #ffdb3b 10%,
+         #fe53bb 45%,
+         #8f51ea 67%,
+         #0044ff 87%
+      );
+   background-origin: border-box;
+   background-clip: content-box, border-box;
+}
+
+#container-snows {
+   position: absolute;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   transition: 0.5s;
+   backdrop-filter: blur(1rem);
+   border-radius: 5rem;
+}
+
+strong {
+   z-index: 2;
+   font-size: 12px;
+   letter-spacing: 4px;
+   color: #fff;
+   text-shadow: 0 0 4px #fff;
+}
+
+#glow {
+   position: absolute;
+   display: flex;
+   width: 12rem;
+}
+
+.circle {
+   width: 100%;
+   height: 30px;
+   filter: blur(2rem);
+   animation: pulse_3011 4s infinite;
+}
+
+.circle:nth-of-type(1) {
+   background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+   background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-snows {
+   z-index: 1;
+   background-color: #212121;
+}
+
+.btn:hover {
+   transform: scale(1.1);
+}
+
+.btn:active {
+   border: double 10px #fe53bb;
+   background-origin: border-box;
+   background-clip: content-box, border-box;
+   animation: none;
+}
+
+.btn:active .circle {
+   background: #fe53bb;
+}
+
+#snows {
+   position: relative;
+   background: transparent;
+   width: 200rem;
+   height: 200rem;
+}
+
+#snows::after {
+   content: '';
+   position: absolute;
+   top: -10rem;
+   left: -100rem;
+   width: 100%;
+   height: 100%;
+   animation: animateSnowsRotate 90s linear infinite;
+}
+
+#snows::after {
+   background-image: radial-gradient(#fff 1px, transparent 1%);
+   background-size: 50px 50px;
+}
+
+#snows::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -50%;
+   width: 170%;
+   height: 500%;
+   animation: animateSnow 90s linear infinite;
+}
+
+#snows::before {
+   background-image: radial-gradient(#fff 1px, transparent 1%);
+   background-size: 50px 50px;
+   opacity: 0.5;
+}
+
+@keyframes animateSnow {
+   from {
+      transform: translateY(0);
+   }
+
+   to {
+      transform: translateY(-135rem);
+   }
+}
+
+@keyframes animateSnowsRotate {
+   from {
+      transform: rotate(360deg);
+   }
+
+   to {
+      transform: rotate(0deg);
+   }
+}
+
+@keyframes gradient_301 {
+   0% {
+      background-position: 0% 50%;
+   }
+
+   50% {
+      background-position: 100% 50%;
+   }
+
+   100% {
+      background-position: 0% 50%;
+   }
+}
+
+@keyframes pulse_3011 {
+   0% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+   }
+
+   70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+   }
+
+   70% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+   }
+}
+
+.register {
+   font-size: 0.9rem;
+   color: #fff;
+   text-align: center;
+   margin: 25px 0 10px;
+}
+
+.register p a {
+   text-decoration: none;
+   color: #fff;
+   font-weight: 600;
+   transition: 0.3s;
+}
+
+.register p a:hover {
+   text-decoration: underline;
+}
